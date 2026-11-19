@@ -21,5 +21,13 @@ pipeline {
                 echo 'Application build completed successfully.'
             }
         }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying website to Nginx...'
+                sh 'cp index.html /deployment/index.html'
+                echo 'Website deployed successfully!'
+            }
+        }
     }
 }
